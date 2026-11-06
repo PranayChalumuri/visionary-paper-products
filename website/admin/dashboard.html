@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard — Visionary Paper Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand"><img src="../assets/visionary-logo.svg" alt="Visionary Paper Products"></div>
+    <div class="admin-label">ADMIN PORTAL</div>
+    <nav>
+      <button class="nav-link active" data-section="overview"><i class="bi bi-grid-1x2"></i> Overview</button>
+      <button class="nav-link" data-section="pending"><i class="bi bi-lightning-charge"></i> Live Pending</button>
+      <button class="nav-link" data-section="orders"><i class="bi bi-receipt"></i> Orders</button>
+      <button class="nav-link" data-section="customOrders"><i class="bi bi-file-earmark-arrow-up"></i> Custom Orders</button>
+      <button class="nav-link" data-section="inventory"><i class="bi bi-box-seam"></i> Inventory</button>
+      <button class="nav-link" data-section="customers"><i class="bi bi-people"></i> Customers</button>
+    </nav>
+    <button id="logoutBtn" class="logout-btn"><i class="bi bi-box-arrow-left"></i> Sign out</button>
+  </aside>
+
+  <div class="main-shell">
+    <header class="topbar">
+      <button id="menuBtn" class="icon-btn d-lg-none"><i class="bi bi-list"></i></button>
+      <div><span class="eyebrow">VISIONARY PAPER PRODUCTS</span><h2 id="pageTitle">Overview</h2></div>
+      <div class="topbar-actions"><span class="status-dot"><span></span> Backend connected</span><button id="refreshBtn" class="btn btn-outline-dark"><i class="bi bi-arrow-clockwise"></i> Refresh</button></div>
+    </header>
+
+    <main class="content">
+      <div id="globalError" class="alert alert-danger d-none"></div>
+
+      <section id="overview" class="dashboard-section">
+        <div class="section-heading"><div><span class="eyebrow">CONTROL CENTER</span><h3>Business overview</h3></div><p>Live operational information from PostgreSQL.</p></div>
+        <div class="stat-grid stat-grid-5">
+          <div class="stat-card"><span>All orders</span><strong id="statOrders">—</strong><i class="bi bi-receipt"></i></div>
+          <div class="stat-card danger-card"><span>Pending now</span><strong id="statPending">—</strong><i class="bi bi-hourglass-split"></i></div>
+          <div class="stat-card"><span>Customers</span><strong id="statCustomers">—</strong><i class="bi bi-people"></i></div>
+          <div class="stat-card"><span>Low stock</span><strong id="statLowStock">—</strong><i class="bi bi-exclamation-triangle"></i></div>
+          <div class="stat-card sales-card"><span>Sales value</span><strong id="statSales">&#8377;0</strong><i class="bi bi-currency-rupee"></i></div>
+        </div>
+
+        <div class="panel sales-panel mt-4">
+          <div class="panel-head sales-head"><div><h4>Sales value by date</h4><small id="salesNote">Order value, not payment collection.</small></div><div class="date-tools"><button class="quick-date" id="todayBtn">Today</button><button class="quick-date" id="yesterdayBtn">Yesterday</button><input id="salesStart" type="date"><span>to</span><input id="salesEnd" type="date"><button class="btn btn-dark" id="applySalesBtn">Apply</button></div></div>
+          <div class="sales-breakdown"><div><span>Standard orders</span><strong id="salesStandard">&#8377;0</strong></div><div><span>Custom orders</span><strong id="salesCustom">&#8377;0</strong></div><div><span>Total sales value</span><strong id="salesTotal">&#8377;0</strong></div><div><span>Orders</span><strong id="salesCount">0</strong></div></div>
+        </div>
+
+        <div class="panel mt-4"><div class="panel-head"><h4>Live pending orders</h4><button class="btn btn-sm btn-dark" data-go="pending">Open live queue</button></div><div class="table-wrap"><table class="table admin-table"><thead><tr><th>Type</th><th>Order</th><th>Customer</th><th>Total</th><th>Created</th><th>Action</th></tr></thead><tbody id="recentPending"></tbody></table></div></div>
+      </section>
+
+      <section id="pending" class="dashboard-section d-none">
+        <div class="section-heading"><div><span class="eyebrow">LIVE PRODUCTION QUEUE</span><h3>Pending orders</h3></div><p>Only unfinished customer requests appear here. Completing an order updates PostgreSQL immediately.</p></div>
+        <div class="queue-banner"><i class="bi bi-lightning-charge-fill"></i><div><strong id="pendingCountLabel">0 pending orders</strong><span>Refresh after receiving a new customer order.</span></div></div>
+        <div class="panel"><div class="table-wrap"><table class="table admin-table"><thead><tr><th>Type</th><th>Order</th><th>Customer</th><th>Request</th><th>Total</th><th>Created</th><th>Action</th></tr></thead><tbody id="pendingTable"></tbody></table></div></div>
+      </section>
+
+      <section id="orders" class="dashboard-section d-none">
+        <div class="section-heading"><div><span class="eyebrow">SALES</span><h3>Orders</h3></div><p>Standard catalogue orders with inventory deduction.</p></div>
+        <div class="panel"><div class="panel-head"><h4>All standard orders</h4><input id="orderSearch" class="form-control search-input" placeholder="Search order or customer"></div><div class="table-wrap"><table class="table admin-table"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Subtotal</th><th>Discount</th><th>Total</th><th>Status</th><th>Created</th></tr></thead><tbody id="ordersTable"></tbody></table></div></div>
+      </section>
+
+      <section id="customOrders" class="dashboard-section d-none">
+        <div class="section-heading"><div><span class="eyebrow">CUSTOM PRODUCTION</span><h3>Uploaded custom orders</h3></div><p>Customer PDFs and exam-pad artwork are stored on the backend and can be downloaded here for production.</p></div>
+        <div class="panel"><div class="panel-head"><h4>Custom requests</h4><input id="customSearch" class="form-control search-input" placeholder="Search customer, file or type"></div><div class="table-wrap"><table class="table admin-table"><thead><tr><th>ID</th><th>Customer</th><th>Type</th><th>File</th><th>Details</th><th>Total</th><th>Status</th><th>Created</th><th></th></tr></thead><tbody id="customOrdersTable"></tbody></table></div></div>
+      </section>
+
+      <section id="inventory" class="dashboard-section d-none">
+        <div class="section-heading"><div><span class="eyebrow">STOCK</span><h3>Inventory</h3></div><p>Monitor standard product stock and update quantities.</p></div>
+        <div class="panel"><div class="panel-head"><h4>Product inventory</h4><input id="inventorySearch" class="form-control search-input" placeholder="Search product"></div><div class="table-wrap"><table class="table admin-table"><thead><tr><th>Product</th><th>Stock</th><th>Low-stock threshold</th><th>Active</th><th>Updated</th><th></th></tr></thead><tbody id="inventoryTable"></tbody></table></div></div>
+      </section>
+
+      <section id="customers" class="dashboard-section d-none">
+        <div class="section-heading"><div><span class="eyebrow">CUSTOMERS</span><h3>Customers</h3></div><p>Permanent customer accounts registered through the website.</p></div>
+        <div class="panel"><div class="panel-head"><h4>Customer directory</h4><input id="customerSearch" class="form-control search-input" placeholder="Search name or phone"></div><div class="table-wrap"><table class="table admin-table"><thead><tr><th>ID</th><th>Name</th><th>Phone</th><th>Address</th><th>Location</th><th>Created</th></tr></thead><tbody id="customersTable"></tbody></table></div></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal fade" id="orderModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Order details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body" id="orderModalBody"></div><div class="modal-footer" id="orderModalFooter"></div></div></div></div>
+  <div class="modal fade" id="stockModal" tabindex="-1"><div class="modal-dialog"><form class="modal-content" id="stockForm"><div class="modal-header"><h5 class="modal-title">Update inventory</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><input type="hidden" id="stockProductId"><p id="stockProductName" class="fw-semibold"></p><label class="form-label">Stock quantity</label><input id="stockQuantity" class="form-control" type="number" min="0" required><label class="form-label mt-3">Low-stock threshold</label><input id="stockThreshold" class="form-control" type="number" min="0" required><label class="form-label mt-3">Active</label><select id="stockActive" class="form-select"><option value="true">Active</option><option value="false">Inactive</option></select><div id="stockError" class="alert alert-danger mt-3 d-none"></div></div><div class="modal-footer"><button class="btn btn-dark" type="submit">Save inventory</button></div></form></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
+

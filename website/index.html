@@ -1,0 +1,674 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0b3c34">
+  <meta name="description" content="Visionary Paper Products — books, exam pads, notebooks and custom paper printing.">
+  <title>Visionary Paper Products | Paper Made to Carry Your Vision</title>
+
+  <link rel="icon" href="assets/visionary-logo.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="scrollProgress"></div>
+
+  <!-- Announcement -->
+  <div class="announcement-bar">
+    <div class="container-fluid px-lg-5 d-flex justify-content-center align-items-center gap-3">
+      <span><i class="bi bi-stars me-1"></i> Custom paper products for schools, colleges & businesses</span>
+      <a href="#quote" class="announcement-link">Start a requirement <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-lg-5">
+        <a class="navbar-brand brand-logo" href="#home" aria-label="Visionary Paper Products home">
+          <img src="assets/visionary-logo.svg" alt="Visionary Paper Products">
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#custom">Custom Printing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#process">How It Works</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions d-flex align-items-center gap-2 mt-3 mt-lg-0">
+            <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="bi bi-search"></i></button>
+            <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+              <i class="bi bi-bag"></i><span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="btn btn-outline-dark rounded-pill px-3" id="myOrdersBtn" type="button">
+              <i class="bi bi-receipt me-1"></i> My Orders
+            </button>
+            <button class="btn btn-brand rounded-pill px-3" id="profileBtn" type="button">
+              <i class="bi bi-person-circle me-1"></i> Profile
+            </button>
+            <a href="#quote" class="btn btn-brand rounded-pill px-4">Get a Quote <i class="bi bi-arrow-up-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- Mobile customer account actions -->
+<div class="mobile-account-actions" id="mobileAccountActions">
+  <button type="button" id="mobileMyOrdersBtn">
+    <i class="bi bi-receipt"></i>
+    <span>My Orders</span>
+  </button>
+
+  <button type="button" id="mobileProfileBtn">
+    <i class="bi bi-person-circle"></i>
+    <span>Profile</span>
+  </button>
+</div>  
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <button class="search-close" id="searchClose"><i class="bi bi-x-lg"></i></button>
+      <div class="eyebrow">Find a product</div>
+      <h2>What are you <em>looking for?</em></h2>
+      <div class="search-input-wrap">
+        <i class="bi bi-search"></i>
+        <input id="globalSearch" type="search" placeholder="Search books, exam pads, notebooks..." autocomplete="off">
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero-section" id="home">
+      <div class="hero-noise"></div>
+      <div class="hero-grid-lines"></div>
+
+      <div class="container-fluid px-lg-5 position-relative z-2">
+        <div class="row align-items-center min-vh-hero">
+          <div class="col-lg-6 hero-copy">
+            <div class="eyebrow hero-eyebrow"><span></span> Paper Products • Printing • Manufacturing</div>
+            <h1>Visionary<br><em>Paper Productions</em></h1>
+            <p class="hero-lead">Books, exam pads, notebooks and custom paper products — designed around your requirements and produced for your business.</p>
+
+            <div class="hero-actions d-flex flex-wrap gap-2">
+              <a href="#products" class="btn btn-brand btn-lg rounded-pill px-4">Order Products <i class="bi bi-arrow-up-right ms-1"></i></a>
+              <a href="#quote" class="btn btn-outline-dark btn-lg rounded-pill px-4">Start a Custom Order</a>
+            </div>
+
+            <div class="hero-points mt-4">
+              <span><i class="bi bi-check2-circle"></i> Custom specifications</span>
+              <span><i class="bi bi-check2-circle"></i> Bulk production</span>
+              <span><i class="bi bi-check2-circle"></i> Institutional printing</span>
+            </div>
+          </div>
+
+          <div class="col-lg-6 hero-visual">
+            <div class="hero-glow hero-glow-green"></div>
+            <div class="hero-glow hero-glow-orange"></div>
+
+            <div class="floating-chip chip-one"><i class="bi bi-stars"></i> Made for your brand</div>
+            <div class="floating-chip chip-two"><i class="bi bi-layers"></i> Built to specification</div>
+
+            <div class="paper-card paper-back"></div>
+            <div class="paper-card paper-middle"></div>
+
+            <div class="hero-book">
+              <div class="book-cover">
+                <small>VISIONARY</small>
+                <strong>YOUR<br>IDEA.</strong>
+                <span>PAPER PRODUCTS</span>
+                <div class="cover-mark"><i class="bi bi-arrow-up-right"></i></div>
+              </div>
+              <div class="book-pages"></div>
+              <div class="book-spine"></div>
+            </div>
+
+            <div class="floating-spec">
+              <div class="spec-mini-label">CUSTOM ORDER</div>
+              <div class="spec-mini-row"><span>Product</span><strong>Notebook</strong></div>
+              <div class="spec-mini-row"><span>Quantity</span><strong>2,000+</strong></div>
+              <div class="spec-mini-row"><span>Branding</span><strong>Custom</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#products" class="hero-scroll"><span>Scroll to explore</span><i class="bi bi-arrow-down"></i></a>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust-strip">
+      <div class="container-fluid px-lg-5">
+        <div class="row g-0">
+          <div class="col-6 col-lg-3 trust-item"><span>01</span><strong>Custom</strong><small>Specifications</small></div>
+          <div class="col-6 col-lg-3 trust-item"><span>02</span><strong>Bulk</strong><small>Production</small></div>
+          <div class="col-6 col-lg-3 trust-item"><span>03</span><strong>Institutional</strong><small>Printing</small></div>
+          <div class="col-6 col-lg-3 trust-item"><span>04</span><strong>Direct</strong><small>Enquiry</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products / What we make -->
+    <section class="section-space products-section" id="products">
+      <div class="container-fluid px-lg-5">
+        <div class="section-heading row align-items-end gy-4">
+          <div class="col-lg-7">
+            <div class="eyebrow">What we make</div>
+            <h2>Choose your paper<br><em>product & quantity.</em></h2>
+          </div>
+          <div class="col-lg-4 ms-auto">
+            <p>Select a product, choose its available option, enter quantity and add it to your basket. Custom books and exam pads have dedicated upload requirements.</p>
+          </div>
+        </div>
+        <div class="product-toolbar product-toolbar-enhanced">
+          <div class="filter-pills" id="filterPills">
+            <button class="filter-pill active" data-filter="all">All <span class="filter-pill-count" id="countAll">14</span></button>
+            <button class="filter-pill" data-filter="books">Books</button>
+            <button class="filter-pill" data-filter="paper">Paper & Sheets</button>
+            <button class="filter-pill" data-filter="record">Record / Files</button>
+            <button class="filter-pill" data-filter="custom">Customized</button>
+          </div>
+          <div class="catalog-search">
+            <i class="bi bi-search"></i>
+            <input id="productSearch" type="search" placeholder="Find a product..." aria-label="Find a product">
+            <button id="clearProductSearch" type="button" aria-label="Clear search"><i class="bi bi-x"></i></button>
+          </div>
+        </div>
+        <div class="product-result-meta">
+          <span id="productResultCount">14 products</span>
+          <span><i class="bi bi-tag"></i> 10% discount is applied automatically in the basket.</span>
+        </div>
+        <div class="row g-3 product-grid" id="productGrid"></div>
+        <div class="no-product-results d-none" id="noProductResults">
+          <i class="bi bi-search"></i><h3>No product found</h3>
+          <p>Try searching for books, paper, OSR, files, exam pads or rough books.</p>
+          <button class="btn btn-outline-dark rounded-pill px-4" id="resetProductSearch">Show all products</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom product builder -->
+    <section class="section-space custom-section" id="custom">
+      <div class="container-fluid px-lg-5">
+        <div class="row align-items-center g-5">
+          <div class="col-xl-6">
+            <div class="custom-stage">
+              <div class="stage-texture"></div>
+              <div class="stage-label">CUSTOM PRINT / 01</div>
+              <div class="custom-paper paper-one"></div>
+              <div class="custom-paper paper-two"></div>
+              <div class="custom-builder-card">
+                <div class="builder-top d-flex justify-content-between align-items-center">
+                  <span>YOUR SPECIFICATION</span><i class="bi bi-sliders2"></i>
+                </div>
+                <div class="builder-product">Notebook</div>
+                <div class="builder-row"><span>SIZE</span><strong>A4</strong></div>
+                <div class="builder-row"><span>PAPER</span><strong>70 GSM</strong></div>
+                <div class="builder-row"><span>PAGES</span><strong>80</strong></div>
+                <div class="builder-row"><span>PRINTING</span><strong>Custom</strong></div>
+                <div class="builder-row"><span>QUANTITY</span><strong>1,000</strong></div>
+                <div class="builder-upload"><i class="bi bi-cloud-arrow-up"></i><span>Artwork / Logo</span><small>Ready for upload</small></div>
+              </div>
+              <div class="stage-orbit"></div>
+            </div>
+          </div>
+
+          <div class="col-xl-5 ms-auto">
+            <div class="eyebrow eyebrow-light">Custom printing</div>
+            <h2 class="light-heading">Your product.<br><em>Your specifications.</em></h2>
+            <p class="light-copy">Every institution and business can need something different. Share the product, quantity, paper, printing, branding and delivery requirements.</p>
+
+            <div class="spec-list">
+              <div><span>01</span> Product & quantity <i class="bi bi-check2"></i></div>
+              <div><span>02</span> Size and paper preference <i class="bi bi-check2"></i></div>
+              <div><span>03</span> Pages & binding requirements <i class="bi bi-check2"></i></div>
+              <div><span>04</span> Printing & colour requirements <i class="bi bi-check2"></i></div>
+              <div><span>05</span> Institution / business branding <i class="bi bi-check2"></i></div>
+              <div><span>06</span> Artwork / design upload <i class="bi bi-check2"></i></div>
+              <div><span>07</span> Delivery location <i class="bi bi-check2"></i></div>
+            </div>
+
+            <a href="#quote" class="btn btn-brand btn-lg rounded-pill px-4">Build Your Requirement <i class="bi bi-arrow-up-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why / numbers -->
+    <section class="section-space numbers-section">
+      <div class="container-fluid px-lg-5">
+        <div class="row gy-5 align-items-end">
+          <div class="col-lg-6">
+            <div class="eyebrow">A better way to buy paper products</div>
+            <h2>From a simple<br><em>requirement</em> to a finished product.</h2>
+          </div>
+          <div class="col-lg-5 ms-auto">
+            <p class="numbers-intro">The first version focuses on making the business easy to discover and easy to contact. Advanced ordering can be added as the customer base grows.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-4">
+          <div class="col-md-4">
+            <div class="number-card">
+              <span class="number">01</span>
+              <i class="bi bi-pencil-square"></i>
+              <h3>Made around you</h3>
+              <p>Custom product specifications, institutional names, logos and artwork.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="number-card number-card-dark">
+              <span class="number">02</span>
+              <i class="bi bi-box-seam"></i>
+              <h3>Built for bulk</h3>
+              <p>Designed for schools, colleges, businesses and repeat institutional requirements.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="number-card number-card-orange">
+              <span class="number">03</span>
+              <i class="bi bi-chat-square-text"></i>
+              <h3>Quote before commitment</h3>
+              <p>For custom jobs, customers can share requirements before confirming an order.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section-space process-section" id="process">
+      <div class="container-fluid px-lg-5">
+        <div class="text-center section-heading centered-heading">
+          <div class="eyebrow justify-content-center">Simple from start to finish</div>
+          <h2>From idea to <em>finished paper.</em></h2>
+          <p>Tell us what you need, receive a quotation, approve the details, and let production begin.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step"><span>01</span><div class="process-icon"><i class="bi bi-search"></i></div><h3>Choose</h3><p>Select a product or describe a custom requirement.</p></div>
+          <div class="process-line"></div>
+          <div class="process-step"><span>02</span><div class="process-icon"><i class="bi bi-sliders"></i></div><h3>Specify</h3><p>Share quantity, size, paper, pages, printing and artwork.</p></div>
+          <div class="process-line"></div>
+          <div class="process-step"><span>03</span><div class="process-icon"><i class="bi bi-receipt"></i></div><h3>Quote</h3><p>Our team reviews your requirement and responds.</p></div>
+          <div class="process-line"></div>
+          <div class="process-step"><span>04</span><div class="process-icon"><i class="bi bi-check2-circle"></i></div><h3>Approve</h3><p>Confirm the specifications and production details.</p></div>
+          <div class="process-line"></div>
+          <div class="process-step"><span>05</span><div class="process-icon"><i class="bi bi-truck"></i></div><h3>Receive</h3><p>Your finished order is prepared for delivery or pickup.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual banner -->
+    <section class="feature-banner-wrap">
+      <div class="feature-banner">
+        <div class="banner-content">
+          <div class="eyebrow eyebrow-light">Built for a growing business</div>
+          <h2>Not just a catalogue.<br><em>A new way to sell.</em></h2>
+          <p>Start with discovery, enquiries and custom orders. Expand later into accounts, payments, order tracking and repeat ordering.</p>
+          <a href="#quote" class="btn btn-light rounded-pill px-4 py-3 fw-bold">Request a Quote <i class="bi bi-arrow-up-right ms-1"></i></a>
+        </div>
+        <div class="banner-visual">
+          <div class="mini-book mini-book-one"></div>
+          <div class="mini-book mini-book-two"></div>
+          <div class="mini-book mini-book-three"></div>
+          <div class="banner-ring"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section-space about-section" id="about">
+      <div class="container-fluid px-lg-5">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <div class="eyebrow">About Visionary</div>
+            <h2>Turning paper into<br><em>possibility.</em></h2>
+            <div class="about-mark mt-5">
+              <img src="assets/visionary-logo.svg" alt="Visionary logo">
+            </div>
+          </div>
+          <div class="col-lg-6 ms-auto about-copy">
+            <p class="about-lead">Visionary Paper Products connects paper manufacturing and printing capabilities with customers who need reliable, customized paper products.</p>
+            <p>Our digital experience is designed to make products easier to discover, requirements easier to communicate and custom orders easier to start.</p>
+            <div class="about-points">
+              <div><i class="bi bi-shield-check"></i><span><strong>Quality-focused</strong>Specifications and production built around the customer's requirement.</span></div>
+              <div><i class="bi bi-clock-history"></i><span><strong>Clear process</strong>A simple path from enquiry to quotation and production.</span></div>
+              <div><i class="bi bi-graph-up-arrow"></i><span><strong>Built to grow</strong>A foundation for future online ordering and business expansion.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section section-space">
+      <div class="container-fluid px-lg-5">
+        <div class="row align-items-end mb-4 gy-3">
+          <div class="col-md-7"><div class="eyebrow">Our work</div><h2>Made to be <em>seen.</em></h2></div>
+          <div class="col-md-4 ms-auto"><p class="gallery-note">These are visual placeholders. Replace them with the client's real product and manufacturing photography.</p></div>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-tile gallery-main">
+            <span>BOOKS / 01</span>
+            <div class="stack-books"><b></b><b></b><b></b></div>
+            <strong>School & College<br>Books</strong>
+          </div>
+          <div class="gallery-tile gallery-orange">
+            <span>CUSTOM PRINT / 02</span>
+            <div class="giant-letter">V</div>
+            <strong>Custom<br>Branding</strong>
+          </div>
+          <div class="gallery-tile gallery-green">
+            <span>EXAM PADS / 03</span>
+            <div class="exam-pad-shape"><small>VISIONARY</small><b>EXAM<br>PAD</b></div>
+            <strong>Institutional<br>Orders</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section section-space" id="quote">
+      <div class="container">
+        <div class="quote-shell">
+          <div class="quote-intro">
+            <div class="eyebrow">Request a quotation</div>
+            <h2>Let's put your idea<br><em>on paper.</em></h2>
+            <p>Share the basics. Our team can review the requirement and get back to you.</p>
+            <div class="quote-contact">
+              <div><i class="bi bi-whatsapp"></i><span>Prefer WhatsApp?<strong>Start a conversation</strong></span></div>
+              <div><i class="bi bi-telephone"></i><span>Need to talk?<strong>Call our team</strong></span></div>
+            </div>
+          </div>
+
+          <form class="quote-form" id="quoteForm">
+            <div class="form-section-title">01 <span>Your details</span></div>
+            <div class="row g-3">
+              <div class="col-md-6"><label>Full name *<input required name="name" type="text" placeholder="Your name"></label></div>
+              <div class="col-md-6"><label>Phone number *<input required name="phone" type="tel" placeholder="+91"></label></div>
+              <div class="col-md-6"><label>Organization<input name="organization" type="text" placeholder="School / College / Business"></label></div>
+              <div class="col-md-6"><label>Email<input name="email" type="email" placeholder="you@example.com"></label></div>
+            </div>
+
+            <div class="form-section-title mt-4">02 <span>Requirement</span></div>
+            <div class="row g-3">
+              <div class="col-md-6"><label>Product *
+                <select required name="product" id="quoteProduct">
+                  <option value="">Select product</option>
+                  <option>Custom Books</option><option>Exam Pads</option><option>Notebooks</option><option>Custom Printing</option><option>Other / I have a different requirement</option>
+                </select>
+              </label></div>
+              <div class="col-md-6"><label>Quantity<input name="quantity" type="number" min="1" placeholder="e.g. 1000"></label></div>
+              <div class="col-md-6"><label>Preferred size<input name="size" type="text" placeholder="A4 / A5 / custom"></label></div>
+              <div class="col-md-6"><label>Delivery location<input name="location" type="text" placeholder="City / area"></label></div>
+              <div class="col-12"><label>Paper, printing & other requirements<textarea name="requirements" rows="4" placeholder="Tell us about paper type, GSM, pages, binding, colours, cover, logo, etc."></textarea></label></div>
+              <div class="col-12">
+                <label class="upload-field">
+                  <input type="file" id="artwork" accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+                  <i class="bi bi-cloud-arrow-up"></i>
+                  <span><strong id="fileName">Upload artwork / design</strong><small>PDF, JPG, PNG, DOC or DOCX — backend storage will be connected later.</small></span>
+                  <i class="bi bi-plus-circle ms-auto"></i>
+                </label>
+              </div>
+            </div>
+            <div class="form-footer">
+              <small><i class="bi bi-lock"></i> Your information is only used for responding to this enquiry.</small>
+              <button type="submit" class="btn btn-brand btn-lg rounded-pill px-4">Submit Requirement <i class="bi bi-arrow-up-right ms-1"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-space faq-section" id="faq">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="eyebrow">Questions</div>
+            <h2>Things customers<br><em>ask us.</em></h2>
+            <p class="mt-4">The answers below are starter content and should be finalized with the client before launch.</p>
+          </div>
+          <div class="col-lg-7 ms-auto">
+            <div class="accordion accordion-flush custom-accordion" id="faqAccordion">
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">Can I order custom-printed books or exam pads?</button></h3><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes — the website is designed around custom requirements. Share your product, quantity, printing and branding details so the team can review them.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Can I provide my own logo or design?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. The frontend includes an artwork upload experience. Actual secure file storage will be connected during the backend phase.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">Do you accept bulk institutional orders?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The experience is designed for bulk and institutional enquiries such as schools, colleges and businesses.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">Will the website show product prices?</button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">For the first version, custom and bulk products can use quotation-based pricing. Fixed pricing can be added for standardized products later.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">Can I place an order from my phone?</button></h3><div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. The frontend is responsive and includes a mobile-first ordering/enquiry experience. A PWA install option can also be enabled.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="container text-center">
+        <div class="eyebrow justify-content-center eyebrow-light">Have a requirement?</div>
+        <h2>Let's make something<br><em>worth printing.</em></h2>
+        <p>Books • Exam Pads • Notebooks • Custom Printing</p>
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+          <a href="#quote" class="btn btn-brand btn-lg rounded-pill px-4">Request a Quote <i class="bi bi-arrow-up-right ms-1"></i></a>
+          <button class="btn btn-outline-light btn-lg rounded-pill px-4" id="installBtn" hidden><i class="bi bi-download me-1"></i> Install App</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container-fluid px-lg-5">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <img src="assets/visionary-logo.svg" class="footer-logo" alt="Visionary Paper Products">
+          <p class="footer-about">Books, paper products and custom printing built around your requirements.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4>Explore</h4>
+          <a href="#products">Products</a><a href="#custom">Custom Printing</a><a href="#process">How It Works</a><a href="#about">About Us</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4>Support</h4>
+          <a href="#quote">Request a Quote</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><button class="footer-link" id="footerSearch">Search</button>
+        </div>
+        <div class="col-lg-4">
+          <h4>Start a conversation</h4>
+          <div class="footer-contact-line"><i class="bi bi-telephone"></i><span>+91 XXXXX XXXXX</span></div>
+          <div class="footer-contact-line"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></div>
+          <div class="footer-contact-line"><i class="bi bi-geo-alt"></i><span>Business location to be confirmed</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom mt-5 pt-4">
+        <span>© 2026 Visionary Paper Products</span>
+        <span>Project Namah Shivaya • Frontend V1</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart offcanvas -->
+  <div class="offcanvas offcanvas-end cart-panel" tabindex="-1" id="cartCanvas" aria-labelledby="cartTitle">
+    <div class="offcanvas-header border-0">
+      <div><div class="eyebrow mb-1">Your selection</div><h2 id="cartTitle">Requirement basket</h2></div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cartItems"></div>
+      <div id="cartEmpty" class="cart-empty text-center py-5">
+        <i class="bi bi-bag fs-1"></i><h4 class="mt-3">Nothing selected yet</h4><p>Add a product to start your requirement.</p><div class="discount-hint"><i class="bi bi-tag"></i> A 10% discount is applied automatically.</div>
+      </div>
+      <div id="cartFooter" class="cart-footer d-none">
+        <div class="cart-summary"><span>Selected products / sets</span><strong id="cartTotalItems">0</strong></div>
+        <div class="cart-price-summary" id="cartPriceSummary"></div>
+        <button type="button" class="btn btn-brand rounded-pill w-100 py-3" id="placeOrderBtn">Place Order <i class="bi bi-arrow-up-right ms-1"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product configuration modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content product-modal">
+        <button type="button" class="modal-close" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        <div class="row g-0">
+          <div class="col-lg-4 modal-product-visual" id="modalVisual"></div>
+          <div class="col-lg-8 p-4 p-lg-5">
+            <div class="eyebrow" id="modalCategory">PRODUCT</div>
+            <h2 id="modalTitle">Product</h2>
+            <p id="modalDescription" class="modal-description"></p>
+            <div id="modalFields" class="modal-fields"></div>
+            <div id="pdfCalcBox" class="pdf-calc-box d-none">
+              <div class="pdf-calc-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+              <div><strong id="pdfFileName">PDF not selected</strong><span id="pdfPageCount">Upload your PDF to calculate pages.</span></div>
+              <div class="pdf-price" id="pdfCalculatedPrice">&#8377;0</div>
+            </div>
+            <div class="quantity-box mt-4">
+              <span>Number of products / sets</span>
+              <div class="quantity-control">
+                <button id="qtyMinus" type="button"><i class="bi bi-dash"></i></button>
+                <strong id="qtyValue">1</strong>
+                <button id="qtyPlus" type="button"><i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+            <div class="modal-live-total mt-3"><span>Item total</span><strong id="modalLiveTotal">&#8377;0</strong></div>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <button class="btn btn-brand rounded-pill px-4" id="addToBasket">Add to Basket <i class="bi bi-bag-plus ms-1"></i></button>
+              <a href="#quote" class="btn btn-outline-dark rounded-pill px-4" data-bs-dismiss="modal">Need a Quote</a>
+            </div>
+            <p class="modal-note mt-3"><i class="bi bi-info-circle"></i> Catalogue prices are applied through the backend order service. Online payment is not connected yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Customer orders modal -->
+  <div class="modal fade" id="ordersModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content orders-modal">
+        <div class="modal-header border-0">
+          <div>
+            <div class="eyebrow mb-1">YOUR ACCOUNT</div>
+            <h2 class="modal-title">My Orders</h2>
+            <p class="orders-subtitle mb-0">Track orders placed from your account.</p>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-sm btn-outline-dark" id="refreshOrdersBtn">
+              <i class="bi bi-arrow-clockwise"></i> Refresh
+            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div id="ordersLoading" class="orders-state">
+            <div class="spinner-border" role="status"></div>
+            <span>Loading your orders...</span>
+          </div>
+          <div id="ordersLoginState" class="orders-state d-none">
+            <i class="bi bi-person-lock"></i>
+            <h5>Login required</h5>
+            <p>Your customer session is not available on this page. Please log in again.</p>
+          </div>
+          <div id="ordersEmptyState" class="orders-state d-none">
+            <i class="bi bi-receipt"></i>
+            <h5>No orders yet</h5>
+            <p>Your placed orders will appear here.</p>
+          </div>
+          <div id="ordersErrorState" class="orders-state d-none">
+            <i class="bi bi-exclamation-circle"></i>
+            <h5>Could not load orders</h5>
+            <p id="ordersErrorText">Please try again.</p>
+            <button class="btn btn-dark rounded-pill" id="retryOrdersBtn">Try again</button>
+          </div>
+          <div id="ordersList" class="customer-orders-list"></div><div id="customOrdersHeading" class="orders-custom-heading d-none"><span class="eyebrow">CUSTOM REQUESTS</span><h5>Uploaded custom orders</h5></div><div id="customOrdersList" class="customer-orders-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer profile modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content profile-modal">
+        <div class="modal-header border-0">
+          <div>
+            <div class="eyebrow mb-1">YOUR ACCOUNT</div>
+            <h2 class="modal-title">My Profile</h2>
+            <p class="profile-subtitle mb-0">Your details are saved for future orders.</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="profileLoading" class="profile-state">
+            <div class="spinner-border spinner-border-sm"></div><span>Loading profile...</span>
+          </div>
+          <form id="profileForm" class="d-none">
+            <div class="profile-account-chip">
+              <i class="bi bi-person-check"></i>
+              <div><strong id="profilePhoneDisplay">—</strong><small>Customer account</small></div>
+            </div>
+            <label class="profile-field">Full name <input id="profileNameInput" readonly></label>
+            <label class="profile-field">Mobile number <input id="profilePhoneReadonly" readonly></label>
+            <div class="profile-fixed-note"><i class="bi bi-lock-fill"></i> Full name and mobile number are permanent account details.</div>
+            <label class="profile-field">Delivery address *<textarea id="profileAddressInput" rows="3" required></textarea></label>
+            <label class="profile-field">Saved location <input id="profileLocationInput" placeholder="Location / coordinates / landmark"></label>
+            <div class="profile-location-box">
+              <div><strong>Change location</strong><small id="profileLocationStatus">Use your current device location to update the address quickly.</small></div>
+              <button type="button" class="btn btn-outline-dark rounded-pill" id="profileUseLocationBtn"><i class="bi bi-crosshair"></i> Use My Location</button>
+            </div>
+            <div id="profileSaveMessage" class="profile-message"></div>
+            <div class="profile-actions">
+              <button type="submit" class="btn btn-brand rounded-pill px-4" id="saveProfileBtn">Save Address</button>
+              <button type="button" class="btn btn-outline-danger rounded-pill px-4" id="logoutBtn">Sign Out</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="siteToast" class="toast site-toast border-0" role="alert">
+      <div class="toast-body d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill"></i><span id="toastMessage">Done</span></div>
+    </div>
+  </div>
+
+  <!-- Mobile sticky actions -->
+  <div class="mobile-actions">
+    <a href="#products"><i class="bi bi-grid"></i><span>Products</span></a>
+    <a href="#custom"><i class="bi bi-magic"></i><span>Customize</span></a>
+    <button id="mobileCart"><i class="bi bi-bag"></i><span>Basket</span><b id="mobileCartCount">0</b></button>
+    <a href="#quote"><i class="bi bi-chat-square-text"></i><span>Quote</span></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>if(window.pdfjsLib){window.pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";}</script>
+  <script src="js/app.js"></script>
+</body>
+</html>

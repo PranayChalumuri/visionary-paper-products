@@ -1,0 +1,13 @@
+{
+  "name": "Visionary Paper Products",
+  "short_name": "Visionary Paper",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f0e6",
+  "theme_color": "#0b3c34",
+  "description": "Visionary Paper Products — books, exam pads, notebooks and custom printing.",
+  "icons": [
+    {"src":"assets/logo.png","sizes":"192x192","type":"image/png"},
+    {"src":"assets/logo.png","sizes":"512x512","type":"image/png"}
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Login — Visionary Paper Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-login-page">
+  <main class="login-shell">
+    <section class="login-card">
+      <div class="brand-mark">
+        <img src="../assets/visionary-logo.svg" alt="Visionary Paper Products">
+      </div>
+      <span class="eyebrow">ADMIN PORTAL</span>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to manage orders, customers and inventory.</p>
+
+      <form id="adminLoginForm" novalidate>
+        <label class="form-label" for="phone">Admin phone</label>
+        <input id="phone" class="form-control form-control-lg" type="tel"
+               inputmode="numeric" autocomplete="username" placeholder="9876543210" required>
+
+        <label class="form-label mt-3" for="pin">PIN</label>
+        <input id="pin" class="form-control form-control-lg" type="password"
+               inputmode="numeric" autocomplete="current-password" placeholder="Enter PIN" required>
+
+        <button id="loginBtn" class="btn btn-dark btn-lg w-100 mt-4" type="submit">
+          <span class="btn-text">Sign in</span>
+          <span class="spinner-border spinner-border-sm d-none" id="loginSpinner"></span>
+        </button>
+        <div id="loginError" class="alert alert-danger mt-3 d-none"></div>
+      </form>
+
+      <div class="login-note">
+        <i class="bi bi-shield-lock"></i>
+        Admin access is protected by the backend role check.
+      </div>
+    </section>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+</html>
+
